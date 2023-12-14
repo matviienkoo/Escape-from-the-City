@@ -646,9 +646,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 335207083}
-        m_TargetAssemblyTypeName: RewardedAds_Alcohol, Assembly-CSharp
-        m_MethodName: ShowAd
+      - m_Target: {fileID: 335207086}
+        m_TargetAssemblyTypeName: UnityLevelPlay, Assembly-CSharp
+        m_MethodName: Baltika_Advertising
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -695,6 +695,7 @@ MonoBehaviour:
   ButtonBaltika: {fileID: 40888462}
   BoolMoveBaltika: 0
   speed: 0
+  BoolAdsBonus: 0
   maxPosLeft: -261
 --- !u!1 &50289078
 GameObject:
@@ -1877,7 +1878,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 9.400001, y: 0.5400009}
+  m_AnchoredPosition: {x: 17.805, y: 0.5400009}
   m_SizeDelta: {x: 20.849998, y: 20.849998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &119398931
@@ -2355,7 +2356,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 138110375}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -59.99994}
+  m_LocalPosition: {x: 0, y: 0, z: -70}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2653,7 +2654,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -0.15002441, y: 0}
-  m_SizeDelta: {x: 0.3000183, y: 384.71558}
+  m_SizeDelta: {x: 0.3000183, y: 383.42047}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &147918957
 MonoBehaviour:
@@ -4009,7 +4010,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0.15002441, y: 0.00024414062}
-  m_SizeDelta: {x: 0.3000183, y: 734.4877}
+  m_SizeDelta: {x: 0.3000183, y: 734.6217}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &198206056
 MonoBehaviour:
@@ -5625,7 +5626,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5924,6 +5925,7 @@ MonoBehaviour:
   speed: 2
   Animator_First_Wheel: {fileID: 506095022}
   Animator_Second_Wheel: {fileID: 1426724244}
+  BoolAdsBonus: 0
   Text_Police: {fileID: 1492153735}
   maxPos: 0
 --- !u!1 &315140636
@@ -6094,7 +6096,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 9.400001, y: 0.5400009}
+  m_AnchoredPosition: {x: 17.805, y: 0.5400009}
   m_SizeDelta: {x: 20.849998, y: 20.849998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &320947101
@@ -6144,10 +6146,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 335207079}
-  - component: {fileID: 335207085}
-  - component: {fileID: 335207084}
-  - component: {fileID: 335207083}
-  - component: {fileID: 335207082}
+  - component: {fileID: 335207086}
   - component: {fileID: 335207081}
   m_Layer: 0
   m_Name: Ads Script
@@ -6212,7 +6211,19 @@ MonoBehaviour:
   AudioScript: {fileID: 337629906}
   Parallax_Script: {fileID: 1616123766}
   Player_Script: {fileID: 836152149}
---- !u!114 &335207082
+  ObjectMove_Script: {fileID: 1246453162}
+  BaltikaMove_Script: {fileID: 40888464}
+  CasinoMove_Script: {fileID: 846887625}
+  Ambulance_Script: {fileID: 1231863947}
+  Police_Script: {fileID: 311231597}
+  Drugs_Script: {fileID: 2095335664}
+  School_Script: {fileID: 540976943}
+  Policy_Script: {fileID: 2124282079}
+  Gopnik_Script: {fileID: 1781744422}
+  Omon_Script: {fileID: 1980692729}
+  Phone_Script: {fileID: 763493958}
+  Military_Script: {fileID: 2025411440}
+--- !u!114 &335207086
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6221,56 +6232,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 335207078}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b011b3e65617604692c34a3a79d1b6c, type: 3}
+  m_Script: {fileID: 11500000, guid: e2d3bbdb939a89c4aa3c53b0daf67e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _showAdButton: {fileID: 762190044}
-  _androidAdUnitId: life_rewarded
+  BaltikaButton: {fileID: 40888462}
+  BaltikaBool: 0
+  CasinoButton: {fileID: 846887629}
+  CasinoBool: 0
+  ReanimationButton: {fileID: 762190044}
+  ReanimationBool: 0
+  Interstitial_Int: 0
+  Ads_Script: {fileID: 335207081}
   Dead_Script: {fileID: 266973584}
---- !u!114 &335207083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 335207078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f6c16df8151e024e8fbc6c93dd81745, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _showAdButton: {fileID: 40888462}
-  _androidAdUnitId: energy_rewarded
-  Ads_Script: {fileID: 335207081}
---- !u!114 &335207084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 335207078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3b3e321d698bf2489a43cb5c31d87b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _showAdButton: {fileID: 846887629}
-  _androidAdUnitId: lottery_rewarded
-  Ads_Script: {fileID: 335207081}
---- !u!114 &335207085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 335207078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 039b7958e4c85eb4b985d40b0c5d18b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _androidGameId: 4627179
-  _testMode: 0
 --- !u!1 &337629905
 GameObject:
   m_ObjectHideFlags: 0
@@ -6762,7 +6735,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7200,7 +7173,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 413523934}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -14.999905}
+  m_LocalPosition: {x: 0, y: 0, z: -70}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7693,7 +7666,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 452152870}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -15}
+  m_LocalPosition: {x: 0, y: 0, z: -70}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8041,7 +8014,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9312,6 +9285,7 @@ MonoBehaviour:
   Ivent_GameObject: {fileID: 540976941}
   Ivent_Script: {fileID: 861909773}
   speed: 0
+  BoolAdsBonus: 0
   maxPosLeft: -177
   maxPosLeftFinal: -534
 --- !u!1 &547889437
@@ -9660,7 +9634,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10142,7 +10116,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 620143936}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalPosition: {x: 0, y: 0, z: -70}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10460,7 +10434,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4cc05d534db81e24b9937867594794d1, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -11212,7 +11186,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12640,9 +12614,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 335207082}
-        m_TargetAssemblyTypeName: RewardedAds_Reanimation, Assembly-CSharp
-        m_MethodName: ShowAd
+      - m_Target: {fileID: 335207086}
+        m_TargetAssemblyTypeName: UnityLevelPlay, Assembly-CSharp
+        m_MethodName: Reanimation_Advertising
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12761,6 +12735,7 @@ MonoBehaviour:
   Ivent_GameObject: {fileID: 540976941}
   Ivent_Script: {fileID: 861909773}
   speed: 0
+  BoolAdsBonus: 0
   maxPosLeft: 83
   maxPosLeftFinal: 0
 --- !u!114 &763493959
@@ -13359,7 +13334,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 453, y: 63}
+  m_AnchoredPosition: {x: 261, y: 63}
   m_SizeDelta: {x: 101.76, y: 36.03}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &846887625
@@ -13378,6 +13353,7 @@ MonoBehaviour:
   ButtonCasino: {fileID: 846887629}
   BoolMoveCasino: 0
   speed: 0
+  BoolAdsBonus: 0
   maxPosLeft: -261
 --- !u!114 &846887626
 MonoBehaviour:
@@ -13461,9 +13437,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 335207084}
-        m_TargetAssemblyTypeName: RewardedAds_Casino, Assembly-CSharp
-        m_MethodName: ShowAd
+      - m_Target: {fileID: 335207086}
+        m_TargetAssemblyTypeName: UnityLevelPlay, Assembly-CSharp
+        m_MethodName: Casino_Advertising
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13773,6 +13749,7 @@ MonoBehaviour:
   ParalaxScript: {fileID: 1616123766}
   SNumberScript: {fileID: 1323527059}
   AmbulanceScript: {fileID: 1231863947}
+  FirebaseScript: {fileID: 1202844428}
   EventFunction: {fileID: 2084213594}
   EventScore: 0
   Bool_Drugs: 0
@@ -14869,7 +14846,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16430,7 +16407,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1054924797}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalPosition: {x: 0, y: 0, z: -70}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17133,6 +17110,7 @@ MonoBehaviour:
   AnimText_Upgrade: {fileID: 1511627435}
   AnimText_Setting: {fileID: 1532807895}
   TrnScript: {fileID: 2142024070}
+  FirebaseScript: {fileID: 1202844428}
   EventFunction: {fileID: 2084213594}
 --- !u!1 &1099798522
 GameObject:
@@ -17403,10 +17381,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 335207086}
         m_TargetAssemblyTypeName: UnityLevelPlay, Assembly-CSharp
         m_MethodName: Interstitial_Advertising
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -18058,7 +18036,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1162554433}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -50}
+  m_LocalPosition: {x: 0, y: 0, z: -70}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18774,7 +18752,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1185840335}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -50}
+  m_LocalPosition: {x: 0, y: 0, z: -70}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19033,7 +19011,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 9.400001, y: 0.5400009}
+  m_AnchoredPosition: {x: 17.805, y: 0.5400009}
   m_SizeDelta: {x: 20.849998, y: 20.849998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1194760019
@@ -19213,10 +19191,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1202844426}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4419cee823b780f4ebb4809b7cd5f6ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 5820e4428d2d1db479f5a5bfab571870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canUseAnalytics: 0
+  _canUseAnalytics: 1
 --- !u!1 &1227847013
 GameObject:
   m_ObjectHideFlags: 0
@@ -19556,6 +19534,7 @@ MonoBehaviour:
     type: 3}
   Sprite_Table_Police: {fileID: 21300000, guid: 2f0ea5dfcfb12ea41aed6507a6098072,
     type: 3}
+  BoolAdsBonus: 0
   Animator_First_Wheel: {fileID: 1406288639}
   Animator_Second_Wheel: {fileID: 1894081911}
   maxPosRight: 3
@@ -19831,6 +19810,7 @@ MonoBehaviour:
   - {fileID: -1324955229, guid: d8ae2ff5b5549584eb506b344d979e07, type: 3}
   - {fileID: 227897692, guid: d8ae2ff5b5549584eb506b344d979e07, type: 3}
   speed: 0
+  BoolAdsBonus: 0
   maxPosLeft: -265
 --- !u!1 &1250770798
 GameObject:
@@ -20100,7 +20080,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -22929,7 +22909,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1451780940}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -70}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -23007,7 +22987,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1462524165}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2}
+  m_LocalPosition: {x: 0, y: 0, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23606,7 +23586,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 9.400001, y: 0.5400009}
+  m_AnchoredPosition: {x: 17.805, y: 0.5400009}
   m_SizeDelta: {x: 20.849998, y: 20.849998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1514348677
@@ -25570,7 +25550,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1707939230}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -15}
+  m_LocalPosition: {x: 0, y: 0, z: -70}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25898,7 +25878,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1722712738}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -70}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -26516,6 +26496,7 @@ MonoBehaviour:
   Ivent_GameObject: {fileID: 1781744415}
   Ivent_Script: {fileID: 861909773}
   speed: 0
+  BoolAdsBonus: 0
   maxPosLeft: 83
   maxPosLeftFinal: -278
 --- !u!1 &1783051750
@@ -26744,7 +26725,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -26844,7 +26825,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1792205023}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -14.999905}
+  m_LocalPosition: {x: 0, y: 0, z: -70}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -27168,10 +27149,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 335207086}
         m_TargetAssemblyTypeName: UnityLevelPlay, Assembly-CSharp
         m_MethodName: Interstitial_Advertising
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -27415,10 +27396,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 335207086}
         m_TargetAssemblyTypeName: UnityLevelPlay, Assembly-CSharp
         m_MethodName: Interstitial_Advertising
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -29558,7 +29539,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1930041695}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -30}
+  m_LocalPosition: {x: 0, y: 0, z: -70}
   m_LocalScale: {x: 1.0972, y: 1.0972, z: 1.0972}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -29760,7 +29741,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1942923707}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -30}
+  m_LocalPosition: {x: 0, y: 0, z: -70}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -30264,6 +30245,7 @@ MonoBehaviour:
   KillScript: {fileID: 266973584}
   AmbulanceScript: {fileID: 1231863947}
   speed: 0
+  BoolAdsBonus: 0
   maxPos: 0
 --- !u!1 &1990861080
 GameObject:
@@ -35345,6 +35327,7 @@ MonoBehaviour:
   EventFunction: {fileID: 2084213594}
   Notification_Script: {fileID: 1978348156}
   speed: 0
+  BoolAdsBonus: 0
   maxPosLeft: 3
   maxPosLeftFinal: 0
 --- !u!1 &2027945924
@@ -35608,7 +35591,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 9.400001, y: 0.5400009}
+  m_AnchoredPosition: {x: 17.805, y: 0.5400009}
   m_SizeDelta: {x: 20.849998, y: 20.849998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2038147948
@@ -36843,6 +36826,7 @@ MonoBehaviour:
   Ivent_GameObject: {fileID: 2095335660}
   Ivent_Script: {fileID: 861909773}
   speed: 0
+  BoolAdsBonus: 0
   maxPosLeft: 83
   maxPosLeftFinal: -278
 --- !u!1 &2109724201
@@ -37245,6 +37229,7 @@ MonoBehaviour:
   Ivent_GameObject: {fileID: 2124282073}
   Ivent_Script: {fileID: 861909773}
   speed: 0
+  BoolAdsBonus: 0
   maxPosLeft: 83
   maxPosLeftFinal: -278
 --- !u!1 &2127023710

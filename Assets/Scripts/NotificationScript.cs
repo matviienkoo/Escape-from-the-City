@@ -74,7 +74,7 @@ public class NotificationScript : MonoBehaviour
 
     public void Notification_Tutorial ()
     {
-    	Text_Notification.text = "Кликайте по экрану, чтобы бежать";
+    	Text_Notification.text = "Много кликайте по экрану, чтобы бежать";
         StartCoroutine(IEnumerator_Long_Text());
     }
 

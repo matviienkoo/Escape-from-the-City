@@ -13,6 +13,9 @@ public class BaltikaMoveScript : MonoBehaviour
 	[Header("Скорость")]
 	public float speed;
 
+	[Header("Рекламный бонус")]
+	public bool BoolAdsBonus;
+
 	[Header("Цель до которой движется обьект")]
 	public float maxPosLeft;
 	private Vector2 originalPos;
@@ -27,6 +30,18 @@ public class BaltikaMoveScript : MonoBehaviour
     	BoolMoveBaltika = true;
     }
 
+    // Рекламный бонус
+    public void AdsBonus ()
+    {
+        BoolAdsBonus = true;
+        StartCoroutine(EnableBonus());
+    }
+    IEnumerator EnableBonus()
+    {
+        yield return new WaitForSeconds(45);
+        BoolAdsBonus = false;
+    }
+
 	private void FixedUpdate()
 	{
 		clicksPerSecond = PlayerPrefs.GetFloat("clicksPerSecond");
@@ -37,9 +52,13 @@ public class BaltikaMoveScript : MonoBehaviour
 			{
 				speed = 0f;
 			}
-			if (clicksPerSecond >= 2)
+			if (clicksPerSecond >= 2 && BoolAdsBonus == false)
 			{
 				speed = 5.3f;
+			}
+			if (clicksPerSecond >= 2 && BoolAdsBonus == true)
+			{
+				speed = 10.6f;
 			}
 
 			transform.Translate(Vector2.left * speed * Time.deltaTime);

@@ -70,7 +70,7 @@ public class PlayerScript : MonoBehaviour
 
     IEnumerator EnableBonus()
     {
-        yield return new WaitForSeconds(60);
+        yield return new WaitForSeconds(45);
         BoolAdsBonus = false;
     }
 

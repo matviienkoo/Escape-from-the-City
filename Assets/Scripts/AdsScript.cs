@@ -55,6 +55,18 @@ public class AdsScript : MonoBehaviour
 	public AudioSorceScript AudioScript;
 	public ParallaxScript Parallax_Script;
 	public PlayerScript Player_Script;
+	public ObjectMoveScript ObjectMove_Script;
+	public BaltikaMoveScript BaltikaMove_Script;
+	public CasinoMoveScript CasinoMove_Script;
+	public AmbulanceMoveScript Ambulance_Script;
+	public PoliceMoveScript Police_Script;
+	public IventMoveScript Drugs_Script;
+	public IventMoveScript School_Script;
+	public IventMoveScript Policy_Script;
+	public IventMoveScript Gopnik_Script;
+	public OmonMoveScript Omon_Script;
+	public IventMoveScript Phone_Script;
+	public MilitaryMoveScript Military_Script;
 
 	// Автоматитечкая система демонстрации рекламы
 	private void Start ()
@@ -102,7 +114,21 @@ public class AdsScript : MonoBehaviour
     	StartCoroutine(EnableBonus());
     	AudioScript.Music_Pitch_On();
     	Parallax_Script.AdsBonus();
+
+    	// Изменить показатели в других скриптах
     	Player_Script.AdsBonus();
+    	ObjectMove_Script.AdsBonus();
+    	BaltikaMove_Script.AdsBonus();
+    	CasinoMove_Script.AdsBonus();
+    	Ambulance_Script.AdsBonus();
+    	Police_Script.AdsBonus();
+    	Drugs_Script.AdsBonus();
+    	School_Script.AdsBonus();
+    	Policy_Script.AdsBonus();
+    	Gopnik_Script.AdsBonus();
+    	Omon_Script.AdsBonus();
+    	Phone_Script.AdsBonus();
+    	Military_Script.AdsBonus();
     }
 
     IEnumerator EnableBonus()

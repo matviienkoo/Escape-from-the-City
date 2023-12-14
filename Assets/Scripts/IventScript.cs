@@ -31,6 +31,7 @@ public class IventScript : MonoBehaviour
     public ParallaxScript ParalaxScript;
     public SettingNumbersScript SNumberScript;
     public AmbulanceMoveScript AmbulanceScript;
+    public FirebaseAnalitics FirebaseScript;
     public EventSystem EventFunction;
 
 	[Header("Ивент по счету")]
@@ -677,6 +678,9 @@ public class IventScript : MonoBehaviour
 			String_Transtion = "Drugs";
 			EventScore = 1;
 			PlayerPrefs.SetInt("EventScore",EventScore);
+
+			//Firebase Analitcs
+			FirebaseScript.Ivent_Drugs();
 		}
 
 		// Второй ивент
@@ -686,51 +690,69 @@ public class IventScript : MonoBehaviour
 			String_Transtion = "School";
 			EventScore = 2;
 			PlayerPrefs.SetInt("EventScore",EventScore);
+
+			//Firebase Analitcs
+			FirebaseScript.Ivent_School();
 		}
 
 		// Трейтий ивент
-		if (DistanceKilometr >= 11 && DistanceMetr >= 500 && EventScore == 2)
+		if (DistanceKilometr >= 8 && DistanceMetr >= 500 && EventScore == 2)
 		{
 			Event_Policy();
 			String_Transtion = "Policy";
 			EventScore = 3;
 			PlayerPrefs.SetInt("EventScore",EventScore);
+
+			//Firebase Analitcs
+			FirebaseScript.Ivent_Police();
 		}
 
 		// Четвертый ивент
-		if (DistanceKilometr >= 31 && DistanceMetr >= 400 && EventScore == 3)
+		if (DistanceKilometr >= 22 && DistanceMetr >= 400 && EventScore == 3)
 		{
 			Event_Gopnik();
 			String_Transtion = "Gopnik";
 			EventScore = 4;
 			PlayerPrefs.SetInt("EventScore",EventScore);
+
+			//Firebase Analitcs
+			FirebaseScript.Ivent_Omon();
 		}
 
 		// Пятый ивент
-		if (DistanceKilometr >= 52 && DistanceMetr >= 200 && EventScore == 4)
+		if (DistanceKilometr >= 35 && DistanceMetr >= 200 && EventScore == 4)
 		{
 			Event_Omon();
 			String_Transtion = "Omon";
 			EventScore = 5;
 			PlayerPrefs.SetInt("EventScore",EventScore);
+
+			//Firebase Analitcs
+			FirebaseScript.Ivent_Omon();
 		}
 
 		// Шестой ивент
-		if (DistanceKilometr >= 80 && DistanceMetr >= 150 && EventScore == 5)
+		if (DistanceKilometr >= 43 && DistanceMetr >= 150 && EventScore == 5)
 		{
 			Event_Phone();
 			String_Transtion = "Phone";
 			EventScore = 6;
 			PlayerPrefs.SetInt("EventScore",EventScore);
+
+			//Firebase Analitcs
+			FirebaseScript.Ivent_Phone();
 		}
 
 		// Седьмой ивент
-		if (DistanceKilometr >= 102 && DistanceMetr >= 50 && EventScore == 6)
+		if (DistanceKilometr >= 52 && DistanceMetr >= 50 && EventScore == 6)
 		{
 			Event_Military();
 			String_Transtion = "Military";
 			EventScore = 7;
 			PlayerPrefs.SetInt("EventScore",EventScore);
+
+			//Firebase Analitcs
+			FirebaseScript.Ivent_Military();
 		}
 	}
 }

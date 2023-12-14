@@ -19,6 +19,9 @@ public class MilitaryMoveScript : MonoBehaviour
 	[Header("Скорость")]
 	public float speed;
 
+	[Header("Рекламный бонус")]
+	public bool BoolAdsBonus;
+
 	[Header("Цель до которой движется обьект")]
 	public float maxPosLeft;
 	public float maxPosLeftFinal;
@@ -40,6 +43,18 @@ public class MilitaryMoveScript : MonoBehaviour
 		Notification_Script.Notification_Military();
 	}
 
+	// Рекламный бонус
+    public void AdsBonus ()
+    {
+        BoolAdsBonus = true;
+        StartCoroutine(EnableBonus());
+    }
+    IEnumerator EnableBonus()
+    {
+        yield return new WaitForSeconds(45);
+        BoolAdsBonus = false;
+    }
+
 	private void FixedUpdate()
 	{
 		clicksPerSecond = PlayerPrefs.GetFloat("clicksPerSecond");
@@ -50,9 +65,13 @@ public class MilitaryMoveScript : MonoBehaviour
 			{
 				speed = 0f;
 			}
-			if (clicksPerSecond >= 2)
+			if (clicksPerSecond >= 2 && BoolAdsBonus == false)
 			{
 				speed = 5.3f;
+			}
+			if (clicksPerSecond >= 2 && BoolAdsBonus == true)
+			{
+				speed = 10.6f;
 			}
 
 			transform.Translate(Vector2.left * speed * Time.deltaTime);

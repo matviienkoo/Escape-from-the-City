@@ -32,6 +32,9 @@ public class OmonMoveScript : MonoBehaviour
 	[Header("Скорость")]
 	public float speed;
 
+	[Header("Рекламный бонус")]
+	public bool BoolAdsBonus;
+
 	[Header("Цель до которой движется обьект")]
 	public float maxPos;
 	private Vector2 originalPos;
@@ -51,27 +54,61 @@ public class OmonMoveScript : MonoBehaviour
     	Omon_GameObject.SetActive(false);
     }
 
+    // Рекламный бонус
+    public void AdsBonus ()
+    {
+        BoolAdsBonus = true;
+        StartCoroutine(EnableBonus());
+    }
+    IEnumerator EnableBonus()
+    {
+        yield return new WaitForSeconds(45);
+        BoolAdsBonus = false;
+    }
+
 	private void FixedUpdate()
 	{
 		clicksPerSecond = PlayerPrefs.GetFloat("clicksPerSecond");
 
 		// Омон бежит 
 		if (BoolOmon == true)
-		{
-			if (clicksPerSecond <= 1){
-				speed = 0.8f;
-			}
-			if (clicksPerSecond >= 2 && clicksPerSecond < 3){
-				speed = 0.5f;
-			}
-			if (clicksPerSecond >= 3 && StepInt < 400){
-				speed = 0f;
-				StepInt += 1;
+		{	
+			if (BoolAdsBonus == false)
+			{
+				if (clicksPerSecond <= 1){
+					speed = 0.8f;
+				}
+				if (clicksPerSecond >= 2 && clicksPerSecond < 3){
+					speed = 0.5f;
+				}
+				if (clicksPerSecond >= 3 && StepInt < 400){
+					speed = 0f;
+					StepInt += 1;
+				}
+
+				if (clicksPerSecond >= 4 && StepInt >= 400){
+					speed = -0.1f;
+					StepInt += 1;
+				}
 			}
 
-			if (clicksPerSecond >= 4 && StepInt >= 400){
-				speed = -0.1f;
-				StepInt += 1;
+			if (BoolAdsBonus == true)
+			{
+				if (clicksPerSecond <= 1){
+					speed = 0.4f;
+				}
+				if (clicksPerSecond >= 2 && clicksPerSecond < 3){
+					speed = 0.25f;
+				}
+				if (clicksPerSecond >= 3 && StepInt < 400){
+					speed = -0.1f;
+					StepInt += 1;
+				}
+
+				if (clicksPerSecond >= 4 && StepInt >= 400){
+					speed = -0.2f;
+					StepInt += 1;
+				}
 			}
 
 			transform.Translate(Vector2.right * speed * Time.deltaTime);

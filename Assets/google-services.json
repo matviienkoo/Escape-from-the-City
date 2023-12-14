@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "520902381297",
+    "project_id": "escape-from-saratov",
+    "storage_bucket": "escape-from-saratov.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:520902381297:android:d7a067c09379304beea350",
+        "android_client_info": {
+          "package_name": "com.cybergnida.saratov"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuChEtOPRBqX9ujeNiqQcfnlpXiiq2aqU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      },
+      "admob_app_id": "ca-app-pub-8445956386374458~7194218527"
+    }
+  ],
+  "configuration_version": "1"
+}

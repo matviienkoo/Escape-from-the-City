@@ -22,6 +22,9 @@ public class AmbulanceMoveScript : MonoBehaviour
 	public Sprite Sprite_Table_Ambulance;
 	public Sprite Sprite_Table_Police;
 
+	[Header("Рекламный бонус")]
+	public bool BoolAdsBonus;
+
 	[Header("Анимация колес")]
 	public Animator Animator_First_Wheel;
 	public Animator Animator_Second_Wheel;
@@ -76,6 +79,17 @@ public class AmbulanceMoveScript : MonoBehaviour
 		Animator_Second_Wheel.enabled = true;
     }
 
+    // Рекламный бонус
+    public void AdsBonus ()
+    {
+        BoolAdsBonus = true;
+        StartCoroutine(EnableBonus());
+    }
+    IEnumerator EnableBonus()
+    {
+        yield return new WaitForSeconds(45);
+        BoolAdsBonus = false;
+    }
 
 	private void FixedUpdate()
 	{
@@ -83,13 +97,22 @@ public class AmbulanceMoveScript : MonoBehaviour
 
 		if (BoolMoveAmbulance == true)
 		{
-			if (clicksPerSecond <= 1)
+			if (clicksPerSecond <= 1 && BoolAdsBonus == false)
 			{
 				speed = 2f;
 			}
-			if (clicksPerSecond >= 2)
+			if (clicksPerSecond >= 2 && BoolAdsBonus == false)
 			{
 				speed = 0.4f;
+			}
+
+			if (clicksPerSecond <= 1 && BoolAdsBonus == true)
+			{
+				speed = 1f;
+			}
+			if (clicksPerSecond >= 2 && BoolAdsBonus == true)
+			{
+				speed = 0.2f;
 			}
 
 			transform.Translate(Vector2.right * speed * Time.deltaTime);

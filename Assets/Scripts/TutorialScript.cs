@@ -48,6 +48,7 @@ public class TutorialScript : MonoBehaviour
 
     [Header("Скрипты")]
     public TranstionScript TrnScript;
+    public FirebaseAnalitics FirebaseScript;
     public EventSystem EventFunction;
 
     // Графический туториал
@@ -92,14 +93,16 @@ public class TutorialScript : MonoBehaviour
         }
 
         if (Int_Plot == 2){
-            Text_Plot.text = "Я по грязь в уныние";
+            Text_Plot.text = "Я погряз в уныние";
             StartCoroutine(IEnumerator_Text());
         }
 
         if (Int_Plot == 1){
             Text_Plot.text = "После того, как меня бросила девушка";
             StartCoroutine(IEnumerator_Text());
-            FirebaseAnalitics.gameAnalytics.BeginTutorial();
+
+            // Firebase Analitics
+            FirebaseScript.BeginTutorial();
         }
     }
 
@@ -144,6 +147,9 @@ public class TutorialScript : MonoBehaviour
         if (IntNextTutorial == 4){
             AnimText_Setting.Play("OffText");
             Tutorial_Anim.Play("OffPanel");
+
+            // Firebase Analitics
+            FirebaseScript.CompleteTutorial();
         }
     }
 
@@ -179,7 +185,7 @@ public class TutorialScript : MonoBehaviour
         if (IntNextTutorial == 4){
             Int_Tutorial = 1;
             PlayerPrefs.SetInt("Int_Tutorial", Int_Tutorial);
-            FirebaseAnalitics.gameAnalytics.CompleteTutorial();
+
 
             Tutorial_Panel.SetActive(false);
             TrnScript.AllClosed();

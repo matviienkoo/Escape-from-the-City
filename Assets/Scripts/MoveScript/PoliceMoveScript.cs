@@ -26,6 +26,9 @@ public class PoliceMoveScript : MonoBehaviour
 	public Animator Animator_First_Wheel;
 	public Animator Animator_Second_Wheel;
 
+	[Header("Рекламный бонус")]
+	public bool BoolAdsBonus;
+
 	[Header("Система текста")]
 	public TextMeshProUGUI Text_Police;
 	private int IntText;
@@ -114,6 +117,18 @@ public class PoliceMoveScript : MonoBehaviour
     	OmonScript.LaunchOmon();
     }
 
+    // Рекламный бонус
+    public void AdsBonus ()
+    {
+        BoolAdsBonus = true;
+        StartCoroutine(EnableBonus());
+    }
+    IEnumerator EnableBonus()
+    {
+        yield return new WaitForSeconds(45);
+        BoolAdsBonus = false;
+    }
+
 	private void FixedUpdate()
 	{
 		clicksPerSecond = PlayerPrefs.GetFloat("clicksPerSecond");
@@ -121,11 +136,22 @@ public class PoliceMoveScript : MonoBehaviour
 		// Машина идет вперед
 		if (BoolMovePolice == true)
 		{
-			if (clicksPerSecond <= 1){
+			if (clicksPerSecond <= 1 && BoolAdsBonus == false)
+			{
 				speed = 2f;
 			}
-			if (clicksPerSecond >= 2){
+			if (clicksPerSecond >= 2 && BoolAdsBonus == false)
+			{
 				speed = 0.4f;
+			}
+
+			if (clicksPerSecond <= 1 && BoolAdsBonus == true)
+			{
+				speed = 1f;
+			}
+			if (clicksPerSecond >= 2 && BoolAdsBonus == true)
+			{
+				speed = 0.2f;
 			}
 
 			transform.Translate(Vector2.right * speed * Time.deltaTime);
@@ -141,11 +167,22 @@ public class PoliceMoveScript : MonoBehaviour
 		// Машина едет назад
 		if (BoolBackMovePolice == true)
 		{
-			if (clicksPerSecond <= 1){
+			if (clicksPerSecond <= 1 && BoolAdsBonus == false)
+			{
 				speed = 0f;
 			}
-			if (clicksPerSecond >= 2){
+			if (clicksPerSecond >= 2 && BoolAdsBonus == false)
+			{
 				speed = 5.3f;
+			}
+
+			if (clicksPerSecond <= 1 && BoolAdsBonus == true)
+			{
+				speed = 0f;
+			}
+			if (clicksPerSecond >= 2 && BoolAdsBonus == true)
+			{
+				speed = 10.6f;
 			}
 
 			transform.Translate(Vector2.left * speed * Time.deltaTime);
